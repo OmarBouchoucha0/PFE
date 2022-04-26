@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Singup Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+  </head>
+  <body>
+
+<form class="box" action="{{url_for('singup')}}" method="post">
+  <h1>Signup</h1>
+  <h5>{{msg}}</h5>
+  <input type="text" name="name" placeholder="Username"  maxlength="20" required>
+  <input type="password" name="pass" placeholder="Password" maxlength="20" required>
+  <input type="password" name="confpass" placeholder="Confirm Password" maxlength="20"  required>
+  <input type="text" name="pos" placeholder="Position" required> 
+  
+  <a href= "{{url_for('index')}}"><input type="submit" name=""class="button" value="Signup"></a>
+  <a href="{{url_for('login')}}">already Has an Account?</a>
+
+</form>
+  </body>
+</html>

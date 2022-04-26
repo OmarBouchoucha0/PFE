@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Config Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+  </head>
+  <body>
+
+<form class="box" action="#" method="POST">
+  <h5>{{msg}}</h5>
+  <a href= "{{url_for('command')}}" ><input type="submit"  value="START DRYING" class="submit"></a>
+  <a href= "{{url_for('numberofintervalesforfruits')}}" class="btn">CHANGE THE VALUE</a>
+  <a href= "{{url_for('fruitgraph')}}" class="btn">SEE THE VALUE</a>
+  <a href= "{{url_for('command')}}">Go Back</a>
+</form>
+  </body>
+</html>

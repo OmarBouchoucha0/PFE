@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Config Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'customvalues.css')}}">
+  </head>
+  <body>
+
+    <div class="centered-wrapper">
+<form class="box" action="#" method="POST">
+    <h1>Set custom intervales</h1>
+    {%for i in nbr %}
+  <input type="number" name="tempature {{i}}" placeholder="Tempature {{i}}" required>
+  <br>
+  <br>
+  <input type="number" name="duration {{i}}" placeholder="duration {{i}}" required>
+  <h5>--------</h5>
+   {% endfor %}
+  <a href= "{{url_for('command')}}"><input type="submit"  value="Set"></a>
+  <a href= "{{url_for('numberofintervales')}}">Go Back</a>
+</form>
+</div>
+  </body>
+</html>

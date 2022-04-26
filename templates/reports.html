@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href = "{{url_for('static',filename='styleofreports.css')}}">
+
+
+    </head>
+    <body>
+        <div class = "container">
+          <aside>
+            <div class="top">
+              <div class="close" id = "closebtn">
+                  <span class="material-icons-sharp">
+                    <img src="{{url_for('static', filename = 'images/icons/round_close_black_24dp.png')}}">
+                  </span>
+              </div>
+              <div class="logo">
+                <img src="{{url_for('static', filename = 'images/full logo.png')}}" >          
+              </div>
+                
+            </div>
+        <div class="sidebar">
+          <a href= "{{url_for('index')}}">
+            <span>
+              <img src="{{url_for('static', filename = 'images/icons/round_grid_view_black_24dp.png')}}">
+            </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href= "{{url_for('command')}}">
+            <span class="material-icons-sharp">
+              <img src="{{url_for('static', filename = 'images/icons/round_done_black_24dp.png')}}">
+            </span>
+            <h3>Command</h3>
+          </a>
+          <a href= "{{url_for('analytics')}}">
+            <span class="material-icons-sharp">
+              <img src="{{url_for('static', filename = 'images/icons/round_query_stats_black_24dp.png')}}">
+            </span>
+            <h3>Analytics</h3>
+          </a>
+          <a href= "{{url_for('reports')}}">
+            <span class="material-icons-sharp">
+              <img src="{{url_for('static', filename = 'images/icons/round_announcement_black_24dp.png')}}">
+            </span>
+            <h3>Reports</h3>
+          </a>
+          <a href= "{{url_for('settings')}}">
+            <span class="material-icons-sharp">
+              <img src="{{url_for('static', filename = 'images/icons/round_settings_black_24dp.png')}}">
+            </span>
+            <h3>Settings</h3>
+          <a href= "{{url_for('logout')}}">
+            <span class="material-icons-sharp">
+              <img src="{{url_for('static', filename = 'images/icons/round_logout_black_24dp.png')}}">
+            </span>
+          <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Reports</h1>
+      <div class="recent-reports">
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Reports</th> 
+              <th>Time</th>             
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+
+              {% for data in reports[0:30] %}
+                <tr>
+                  <td>{{data.user.name}}</td>
+                  <td>{{data.report}}</td>
+                  <td>{{data.time}}
+                  <td>{{data.date}}</td>
+                 
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+      </div>
+   </main>
+   <div class="right">
+    <div class="top">
+      <button id="menubtn">
+        <span>
+          <img src="{{url_for('static', filename = 'images/icons/round_menu_black_24dp.png')}}">
+         </span>
+      </button>
+      <div class="profile">
+        <div class="info">
+          <p>Hey <b>{{ name }}</b></p>
+          <small class="text-muted">{{pos}}</small>
+        </div>
+        <div class="profile-photo">
+         <img src="{{user.url}}" >
+           </span>
+        </div>
+      </div>
+    </div>
+    <div class="recent-messages">
+      <h2>Recent Messages</h2>
+      <div class="updates">
+        {% for message in messages %}
+        <div class="update">
+        <div class="profile-photo">
+          <img src="{{message.user.url}}" >
+        </div>
+        <div class="message">
+          <p><b>{{message.user.name}}</b></p>
+              <p>{{message.message}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{{url_for('messagesender')}}">
+      <div class="item add-message">
+        
+          <span class="material-icons-sharp">
+            <img src="{{url_for('static', filename = 'images/icons/round_add_white_24dp.png')}}">
+          </span>                  
+        <div>
+        <h3>Send a Message</h3>
+      </div>
+    </div>
+    </a>
+
+  </div>
+</div>
+      </div>
+      <script src="{{url_for('static', filename = 'index.js')}}"></script>
+
+      </body>
+      </html>

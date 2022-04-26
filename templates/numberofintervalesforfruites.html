@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Config Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+  </head>
+  <body>
+
+<form class="box" action="#" method="POST">
+  <h1>How Many Intervals?</h1>
+  <input type="number" name="number" required>
+  <a href= "{{url_for('customintervalesforfruits')}}"><input type="submit"  value="Set"></a>
+  <a href= "{{url_for('command')}}">Go Back</a>
+</form>
+  </body>
+</html>

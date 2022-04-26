@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>change profile pic</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+  </head>
+  <body>
+
+<form class="box" action="#" method="post">
+  <select name="pfp" id="pfp-select">
+    <option value="" disabled>Please choose an option</option>
+    <option value="1.png">1</option>
+    <option value="2.jpg">2</option>
+    <option value="3.jpg">3</option>
+    <option value="4.jpg">4</option>
+    <option value="profile-pic.png">default</option>
+</select>
+
+  <input type="submit"  value="yes">
+  <a href="{{url_for('settings')}}">GO back</a>
+
+</form>
+
+
+  </body>
+</html>
